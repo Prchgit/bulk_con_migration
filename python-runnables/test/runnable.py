@@ -38,7 +38,8 @@ class MyRunnable(Runnable):
         try:
             self.client.get_connection(Src_Connection).get_info()
         except:
-            raise Exception("The source connection does not exist or the user does not have appropriate permissions.") 
+            com.dataiku.dip.exceptions.UnauthorizedException:
+            raise Exception("Connection does not exist or you do not have permission to view its details") 
              
         # check that destination connection is valid    
         try:
