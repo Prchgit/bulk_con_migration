@@ -35,10 +35,10 @@ class MyRunnable(Runnable):
         conn            = 'connection'
        
         # check that source connection is valid
-        try:
-            client.get_connection(Src_Connection).get_info()
-        except:
-             return("Source Connection does not exist")
+        #try:
+        client.get_connection(Src_Connection).get_info()
+        #except:
+            #return("Source Connection does not exist")
             #return("Source Connection does not exist")
              
         # check that destination connection is valid    
