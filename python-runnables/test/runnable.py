@@ -38,14 +38,15 @@ class MyRunnable(Runnable):
         try:
             client.get_connection(Src_Connection).get_info()
         except:
-            return "Connection",Src_Connection,"does not exist"
+            return "Source Connection does not exist"
             
+        # check that destination connection is valid    
         try:
             client.get_connection(Dest_Connection).get_info()
         except:
-            return "Connection",Dest_Connection,"does not exist"    
+            return "Destination Connection does not exist"    
         
-        # check that destination connection is valid
+       
      
         datasets = project.list_datasets()
         for i in datasets:
