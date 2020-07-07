@@ -39,7 +39,7 @@ class MyRunnable(Runnable):
             self.client.get_connection(Src_Connection).get_info()
         except:
             raise Exception("Source connection does not exist or you do not have permission to view its details.") 
-             
+            
         # check that destination connection is valid    
         try:
             self.client.get_connection(Dest_Connection).get_info()
