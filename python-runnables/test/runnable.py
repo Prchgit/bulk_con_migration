@@ -28,14 +28,15 @@ class MyRunnable(Runnable):
         """
         Src_Connection  = self.config.get('Src_Connection')
         Dest_Connection = self.config.get('Dest_Connection')
-        c='connection'
-        
+        project         = client.get_project(self.project_key)
+        conn            = 'connection'
+       
         
         datasets = project.list_datasets()
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
-            if(myds_def['params']['connection'] == Src_Connection):
+            if(conn in myds_def['params'].keys() and myds_def['params']['connection'] == Src_Connection):
                 myds_def['params']['connection'] = Dest_Connection
                 myds.set_definition(myds_def)
         raise Exception("unimplemented")
