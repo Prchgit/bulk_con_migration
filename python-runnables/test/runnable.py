@@ -26,6 +26,7 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        c='connection'
         datasets = project.list_datasets()
         for i in datasets:
             myds = project.get_dataset(i['name'])
