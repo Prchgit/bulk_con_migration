@@ -1,7 +1,7 @@
 {
     "meta" : {
-        "label" : "A great macros",
-        "description" : "It does stuff",
+        "label" : "Bulk Connection Migration",
+        "description" : "This Macro is used to update connection information of all datasets in a Project",
         "icon" : "icon-trash"
     },
 
