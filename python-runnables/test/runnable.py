@@ -48,6 +48,7 @@ class MyRunnable(Runnable):
        
      
         datasets = project.list_datasets()
+        migrated_datasets = []
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
@@ -56,6 +57,7 @@ class MyRunnable(Runnable):
                     # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
                     myds.set_definition(myds_def)
+                    migrated_datasets.append(i['name'])
                 except:
                     raise Exception("Connection type mismatch")
                     
