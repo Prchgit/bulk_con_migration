@@ -33,7 +33,11 @@ class MyRunnable(Runnable):
         Dest_Connection = self.config.get('Dest_Connection')
         project         = self.client.get_project(self.project_key)
         conn            = 'connection'
-       
+     
+        if(Src_Connection == Dest_Connection):
+            raise Exception("Source and Target connection are same.")
+    
+    
         # check that source connection is valid
         try:
             self.client.get_connection(Src_Connection).get_info()
