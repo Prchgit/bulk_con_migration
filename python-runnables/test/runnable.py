@@ -43,7 +43,7 @@ class MyRunnable(Runnable):
         try:
             client.get_connection(Dest_Connection).get_info()
         except:
-            print({Dest_Connection}," does not exist")    
+            print("Connection ",{Dest_Connection}," does not exist")    
         
         # check that destination connection is valid
      
