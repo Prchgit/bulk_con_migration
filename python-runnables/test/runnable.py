@@ -38,13 +38,13 @@ class MyRunnable(Runnable):
         try:
             client.get_connection(Src_Connection).get_info()
         except:
-            return "Source Connection does not exist"
+            return("Source Connection does not exist")
             
         # check that destination connection is valid    
         try:
             client.get_connection(Dest_Connection).get_info()
         except:
-            return "Destination Connection does not exist"    
+            return("Destination Connection does not exist")    
         
        
      
