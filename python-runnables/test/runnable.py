@@ -27,6 +27,7 @@ class MyRunnable(Runnable):
         The progress_callback is a function expecting 1 value: current progress
         """
         datasets = project.list_datasets()
-        
+        for i in datasets:
+            print(i['name'])            
         raise Exception("unimplemented")
         
