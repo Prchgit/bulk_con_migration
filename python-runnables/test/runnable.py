@@ -34,13 +34,16 @@ class MyRunnable(Runnable):
         project         = self.client.get_project(self.project_key)
         conn            = 'connection'
        
-        
+     
         datasets = project.list_datasets()
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
             if(conn in myds_def['params'].keys() and myds_def['params']['connection'] == Src_Connection):
-                myds_def['params']['connection'] = Dest_Connection
+                try:
+                    myds_def['params']['connection'] = Dest_Connection
+                except:
+                    return(Dest_Connection+" is not of same type as "+Src_Connection)
                 myds.set_definition(myds_def)
                 
         return("Migration completed")
