@@ -56,8 +56,7 @@ class MyRunnable(Runnable):
                 try:
                     # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
-                    myds.set_definition(myds_def)
-                    
+                    myds.set_definition(myds_def)                   
                 except:
                     raise Exception("Connection type mismatch")
                     
