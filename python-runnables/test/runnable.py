@@ -46,7 +46,7 @@ class MyRunnable(Runnable):
             self.client.get_connection(Dest_Connection).get_info()
         except:
             print("Destination Connection does not exist")    
-            raise
+            raise Exception('spam', 'eggs')
        
      
         datasets = project.list_datasets()
