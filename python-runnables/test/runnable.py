@@ -37,7 +37,7 @@ class MyRunnable(Runnable):
         # check that source connection is valid
         try:
             self.client.get_connection(Src_Connection).get_info()
-        except DataikuException:
+        except:
             raise Exception("Connection does not exist or you do not have permission to view its details") 
              
         # check that destination connection is valid    
