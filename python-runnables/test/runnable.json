@@ -12,12 +12,18 @@
 
     "params": [
         {
-            "name": "param_name",
+            "name": "Source Connection",
             "label" : "The parameter",
-            "type": "INT",
-            "description":"Delete logs for jobs older than this",
-            "mandatory" : true,
-            "defaultValue" : 15
+            "type": "STRING",
+            "description":"Enter the connection name which is currently used by datasets.",
+            "mandatory" : true
+        },
+        {
+            "name": "Destination Connection",
+            "label" : "The parameter",
+            "type": "STRING",
+            "description":"Enter the target connection name.",
+            "mandatory" : true
         }
     ]
 }

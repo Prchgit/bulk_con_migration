@@ -26,7 +26,7 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
-        result = "It worked"
-        return result
+        datasets = project.list_datasets()
+        
         raise Exception("unimplemented")
         
