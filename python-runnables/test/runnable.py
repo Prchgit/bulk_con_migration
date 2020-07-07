@@ -38,13 +38,13 @@ class MyRunnable(Runnable):
         try:
             self.client.get_connection(Src_Connection).get_info()
         except:
-            raise Exception("Connection does not exist or you do not have permission to view its details") 
+            raise Exception("Source connection does not exist or you do not have permission to view its details.") 
              
         # check that destination connection is valid    
         try:
             self.client.get_connection(Dest_Connection).get_info()
         except:
-            raise Exception("The destination connection does not exist or the user does not have appropriate permissions.")
+            raise Exception("Destination connection does not exist or you do not have permission to view its details.")
        
      
         datasets = project.list_datasets()
