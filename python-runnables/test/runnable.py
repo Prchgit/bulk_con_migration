@@ -50,7 +50,6 @@ class MyRunnable(Runnable):
         except:
             raise Exception("Destination connection does not exist or you do not have permission to view its details.")
        
-     
         datasets = project.list_datasets()
 
         for i in datasets:
