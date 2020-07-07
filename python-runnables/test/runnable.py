@@ -38,7 +38,7 @@ class MyRunnable(Runnable):
         try:
             self.client.get_connection(Src_Connection).get_info()
         except:
-            raise Exception("The souce connection does not exist or the user does not have appropriate permissions.") 
+            raise Exception("The source connection does not exist or the user does not have appropriate permissions.") 
              
         # check that destination connection is valid    
         try:
