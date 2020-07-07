@@ -57,9 +57,10 @@ class MyRunnable(Runnable):
                 try:
                     # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
+                    myds.set_definition(myds_def)
                 except:
-                    return(Dest_Connection+" is not of same type as "+Src_Connection)
-                myds.set_definition(myds_def)
+                    raise Exception("Connection type mismatch")
+                    #return(Dest_Connection+" is not of same type as "+Src_Connection)
                 
         return("Migration completed")
         
