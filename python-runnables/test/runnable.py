@@ -37,6 +37,7 @@ class MyRunnable(Runnable):
         
         datasets = project.list_datasets()
         for i in datasets:
+            print(i['name'])
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
             if(conn in myds_def['params'].keys() and myds_def['params']['connection'] == Src_Connection):
