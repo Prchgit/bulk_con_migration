@@ -62,5 +62,5 @@ class MyRunnable(Runnable):
                     raise Exception("Connection type mismatch")
                     
                 
-        return("Migration completed")
+        return(migrated_datasets.values())
         
