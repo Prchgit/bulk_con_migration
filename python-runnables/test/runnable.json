@@ -12,15 +12,15 @@
 
     "params": [
         {
-            "name": "Source Connection",
-            "label" : "The parameter",
+            "name": "Src_Connection",
+            "label" : "Source Connection",
             "type": "STRING",
             "description":"Enter the connection name which is currently used by datasets.",
             "mandatory" : true
         },
         {
-            "name": "Destination Connection",
-            "label" : "The parameter",
+            "name": "Dest_Connection",
+            "label" : "Destination Connection",
             "type": "STRING",
             "description":"Enter the target connection name.",
             "mandatory" : true
