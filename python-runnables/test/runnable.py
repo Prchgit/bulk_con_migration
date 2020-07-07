@@ -31,7 +31,7 @@ class MyRunnable(Runnable):
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
-            if(myds_def['params']['connection'] == 'psql'):
+            if(myds_def['params']['connection'] == ''):
                 myds_def['params']['connection'] = 'fakemysql'
                 myds.set_definition(myds_def)
         raise Exception("unimplemented")
