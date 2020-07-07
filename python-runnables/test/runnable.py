@@ -44,9 +44,9 @@ class MyRunnable(Runnable):
         # check that destination connection is valid    
         try:
             self.client.get_connection(Dest_Connection).get_info()
-        except:
+        #except:
             #print("Destination Connection does not exist")    
-            raise Exception("The destination connection is invalid")
+           #raise Exception("The destination connection is invalid")
        
      
         datasets = project.list_datasets()
@@ -60,7 +60,7 @@ class MyRunnable(Runnable):
                     myds.set_definition(myds_def)
                 except:
                     raise Exception("Connection type mismatch")
-                    #return(Dest_Connection+" is not of same type as "+Src_Connection)
+                    
                 
         return("Migration completed")
         
