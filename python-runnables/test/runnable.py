@@ -30,7 +30,7 @@ class MyRunnable(Runnable):
         """
         Src_Connection  = self.config.get('Src_Connection')
         Dest_Connection = self.config.get('Dest_Connection')
-        project         = client.get_project(self.project_key)
+        project         = dataiku.client.get_project(self.project_key)
         conn            = 'connection'
        
         
