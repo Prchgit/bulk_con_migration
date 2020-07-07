@@ -38,13 +38,13 @@ class MyRunnable(Runnable):
         try:
             self.client.get_connection(Src_Connection).get_info()
         except:
-            raise Exception("The souce connection is invalid") 
+            raise Exception("The souce connection does not exist or the user does not have appropriate permissions.") 
              
         # check that destination connection is valid    
         try:
             self.client.get_connection(Dest_Connection).get_info()
         except:
-            raise Exception("The destination connection is invalid")
+            raise Exception("The destination connection does not exist or the user does not have appropriate permissions.")
        
      
         datasets = project.list_datasets()
