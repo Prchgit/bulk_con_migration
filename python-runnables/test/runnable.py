@@ -26,13 +26,17 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        Src_Connection  = self.config.get('Src_Connection')
+        Dest_Connection = self.config.get('Dest_Connection')
         c='connection'
+        
+        
         datasets = project.list_datasets()
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
-            if(myds_def['params']['connection'] == ''):
-                myds_def['params']['connection'] = 'fakemysql'
+            if(myds_def['params']['connection'] == Src_Connection):
+                myds_def['params']['connection'] = Dest_Connection
                 myds.set_definition(myds_def)
         raise Exception("unimplemented")
         
