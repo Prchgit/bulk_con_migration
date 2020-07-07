@@ -34,6 +34,9 @@ class MyRunnable(Runnable):
         project         = self.client.get_project(self.project_key)
         conn            = 'connection'
        
+        # check that source connection is valid
+        
+        # check that destination connection is valid
      
         datasets = project.list_datasets()
         for i in datasets:
@@ -41,6 +44,7 @@ class MyRunnable(Runnable):
             myds_def = myds.get_definition()
             if(conn in myds_def['params'].keys() and myds_def['params']['connection'] == Src_Connection):
                 try:
+                    # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
                 except:
                     return(Dest_Connection+" is not of same type as "+Src_Connection)
