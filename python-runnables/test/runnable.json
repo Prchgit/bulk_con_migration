@@ -2,7 +2,7 @@
     "meta" : {
         "label" : "Bulk Connection Migration",
         "description" : "This Macro is used to update connection information of all datasets in a Project",
-        "icon" : "icon-trash"
+        "icon" : "icon-upload-alt"
     },
 
     "impersonate" : false,
