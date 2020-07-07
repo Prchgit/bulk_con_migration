@@ -1,5 +1,7 @@
 # This file is the actual code for the Python runnable test
 from dataiku.runnables import Runnable
+from dataiku.customrecipe import *
+import dataiku
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
