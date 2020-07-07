@@ -35,6 +35,10 @@ class MyRunnable(Runnable):
         conn            = 'connection'
        
         # check that source connection is valid
+        try:
+            client.get_connection(Src_Connection).get_info()
+        except:
+            print(Src_Connection+"")
         
         # check that destination connection is valid
      
