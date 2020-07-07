@@ -1,0 +1,23 @@
+{
+    "meta" : {
+        "label" : "A great macros",
+        "description" : "It does stuff",
+        "icon" : "icon-trash"
+    },
+
+    "impersonate" : false,
+    "permissions" : ["READ_CONF"],
+    "resultType" : "HTML",
+    "resultLabel" : "The output",
+
+    "params": [
+        {
+            "name": "param_name",
+            "label" : "The parameter",
+            "type": "INT",
+            "description":"Delete logs for jobs older than this",
+            "mandatory" : true,
+            "defaultValue" : 15
+        }
+    ]
+}

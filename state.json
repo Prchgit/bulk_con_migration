@@ -1,0 +1,12 @@
+{
+  "actions": [
+    {
+      "ts": 1594086318052,
+      "action": "INSTALL",
+      "user": "dku_u2"
+    }
+  ],
+  "gitState": {
+    "enabled": false
+  }
+}
