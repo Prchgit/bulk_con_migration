@@ -17,14 +17,15 @@
             "type": "STRING",
             "description":"Enter the connection name which is currently used by datasets.",
             "mandatory" : true,
-            "default" : "psql"
+            "defaultValue" : "psql"
         },
         {
             "name": "Dest_Connection",
             "label" : "Destination Connection",
             "type": "STRING",
             "description":"Enter the target connection name.",
-            "mandatory" : true
+            "mandatory" : true,
+            "defaultValue" : "fakemysql"
         }
     ]
 }
