@@ -16,7 +16,8 @@
             "label" : "Source Connection",
             "type": "STRING",
             "description":"Enter the connection name which is currently used by datasets.",
-            "mandatory" : true
+            "mandatory" : true,
+            "default" : "psql"
         },
         {
             "name": "Dest_Connection",
