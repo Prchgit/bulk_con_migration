@@ -48,7 +48,7 @@ class MyRunnable(Runnable):
        
      
         datasets = project.list_datasets()
-        migrated_datasets = []
+        #migrated_datasets = []
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
