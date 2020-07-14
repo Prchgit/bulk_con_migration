@@ -47,9 +47,9 @@ class MyRunnable(Runnable):
             raise Exception("Destination connection does not exist or you do not have permission to view its details.")
        
         # Extract the destination connection type 
-            Dest_type = Dest_info['type']
-                   
+        Dest_type = Dest_info['type']           
         datasets = project.list_datasets()
+        
         #migrated_datasets = []
         for i in datasets:
             myds = project.get_dataset(i['name'])
@@ -58,8 +58,7 @@ class MyRunnable(Runnable):
                 try:
                     # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
-                    myds_def['type'] = Dest_type
-                
+                    myds_def['type'] = Dest_type                
                     myds.set_definition(myds_def)
                                      
                     #migrated_datasets.append(i['name'])
