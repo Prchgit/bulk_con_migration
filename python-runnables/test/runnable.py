@@ -36,17 +36,19 @@ class MyRunnable(Runnable):
        
         # check that source connection is valid
         try:
-            self.client.get_connection(Src_Connection).get_info()
+            Src_info = self.client.get_connection(Src_Connection).get_info()
         except:
             raise Exception("Source connection does not exist or you do not have permission to view its details.") 
              
         # check that destination connection is valid    
         try:
-            self.client.get_connection(Dest_Connection).get_info()
+            Dest_info = self.client.get_connection(Dest_Connection).get_info()
         except:
             raise Exception("Destination connection does not exist or you do not have permission to view its details.")
        
-     
+        # Extract the destination connection type 
+            Dest_type = Dest_info['type']
+                   
         datasets = project.list_datasets()
         #migrated_datasets = []
         for i in datasets:
@@ -56,8 +58,11 @@ class MyRunnable(Runnable):
                 try:
                     # try and execute if both connections are of same type(sql, hdfs, etc).
                     myds_def['params']['connection'] = Dest_Connection
+                    myds_def['type'] = Dest_type
+                
                     myds.set_definition(myds_def)
-                    migrated_datasets.append(i['name'])
+                                     
+                    #migrated_datasets.append(i['name'])
                 except:
                     raise Exception("Connection type mismatch")
                     
