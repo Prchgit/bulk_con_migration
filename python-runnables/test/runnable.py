@@ -46,11 +46,15 @@ class MyRunnable(Runnable):
         except:
             raise Exception("Destination connection does not exist or you do not have permission to view its details.")
        
-        # Extract the destination connection type 
-        Dest_type = Dest_info['type']           
-        datasets = project.list_datasets()
+        # Extract the connection types 
+        Dest_type = Dest_info['type']     
+        Src_type = Src_info['type']
         
-        #migrated_datasets = []
+        if(Src_type.lower().find('sql') == -1 or Dest_type.lower().find('sql') == -1):
+        raise Exception("Both Current and Target connections should be of type - SQL")
+        
+        
+        datasets = project.list_datasets()
         for i in datasets:
             myds = project.get_dataset(i['name'])
             myds_def = myds.get_definition()
