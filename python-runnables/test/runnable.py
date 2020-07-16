@@ -38,13 +38,13 @@ class MyRunnable(Runnable):
         try:
             Src_info = self.client.get_connection(Src_Connection).get_info()
         except:
-            raise Exception("Source connection does not exist or you do not have permission to view its details.") 
+            raise Exception("Current connection name does not exist or you do not have permission to view its details.") 
              
         # check that destination connection is valid    
         try:
             Dest_info = self.client.get_connection(Dest_Connection).get_info()
         except:
-            raise Exception("Destination connection does not exist or you do not have permission to view its details.")
+            raise Exception("Target connection name does not exist or you do not have permission to view its details.")
        
         # Extract the connection types 
         Dest_type = Dest_info['type']     
