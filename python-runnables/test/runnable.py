@@ -51,7 +51,7 @@ class MyRunnable(Runnable):
         Src_type = Src_info['type']
         
         if(Src_type.lower().find('sql') == -1 or Dest_type.lower().find('sql') == -1):
-        raise Exception("Both Current and Target connections should be of type - SQL")
+             raise Exception("Both Current and Target connections should be of type - SQL")
         
         
         datasets = project.list_datasets()
