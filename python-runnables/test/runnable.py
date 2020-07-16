@@ -50,6 +50,7 @@ class MyRunnable(Runnable):
         Dest_type = Dest_info['type']     
         Src_type = Src_info['type']
         
+        # Verify that both current and target connections are of SQL type.
         if(Src_type.lower().find('sql') == -1 or Dest_type.lower().find('sql') == -1):
              raise Exception("Both Current and Target connections should be of type - SQL")
         
